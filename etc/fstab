@@ -1,0 +1,28 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+##### I REDACTED ALL UUIDs.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mapper/system UUID=no.
+LABEL=system        	/         	btrfs     	rw,autodefrag,noatime,compress=lzo,ssd,space_cache,subvolid=256,subvol=/@ 0 0
+
+# /dev/mapper/system UUID=no.
+LABEL=system        	/home     	btrfs     	rw,autodefrag,noatime,compress=lzo,ssd,space_cache,subvolid=257,subvol=/@home 0 0
+
+# /dev/mapper/system UUID=no.
+LABEL=system        	/.snapshots		btrfs     	rw,compress=none,subvolid=314,subvol=/@snapshots 0 0
+LABEL=system		/home/.snapshots	btrfs	rw,compress=none,subvolid=301,subvol=/@home/.snapshots 0 0
+
+LABEL=system			/var/cache/pacman/pkg	btrfs	rw,autodefrag,noatime,compress=lzo,ssd,space_cache,subvolid=308,subvol=/@/var/cache/pacman/pkg 0 0
+LABEL=system			/var/tmp	btrfs	rw,autodefrag,nodev,noexec,nosuid,noatime,compress=lzo,ssd,space_cache,subvolid=309,subvol=/@/var/tmp 0 0
+
+LABEL=system		/.swap	btrfs	rw,compress=none,subvolid=315,subvol/@swap	0 0
+
+
+hugetlbfs				/dev/hugepages	hugetlbfs	mode=01770,gid=kvm	0 0
+/.swap/.swapfile				none	swap	defaults	0 0
+tmpfs			/dev/shm	tmpfs	defaults,nosuid,noexec,nodev	0 0
+
+# /dev/sda3 UUID=maybe.
+UUID=maybe.		/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro,nodev,nosuid	0 2
