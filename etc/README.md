@@ -42,7 +42,7 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 
 ### DEBUG_CFLAGS
 - Added `-grecord-gcc-switches` to insert GCC compiler arguments in debugging information.
-- Added `-fasynchronous-unwind-tables` to make backtrackes more reliable.
+- Added `-fasynchronous-unwind-tables` to make backtraces more reliable.
 
 ### DEBUG_CXXFLAGS
 - Removed everything and added the `$DEBUG_CFLAGS` variable.

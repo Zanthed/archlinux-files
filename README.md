@@ -1,5 +1,8 @@
-# Customized Arch files.
-Anything I've modified that I don't see done very commonly for good reasons or documented at all anywhere, I'll mention here. 
+# Customized Arch files
+
+# [/etc](etc/README.md)
+
+Anything I've modified that I don't see done very commonly for good reasons or documented at all anywhere, I'll mention here.
 
 Mostly just hardening garbage Linux and optimizing it for speed.
 
