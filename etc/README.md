@@ -27,7 +27,7 @@ Important changes made:
 - Added `-ftree-loop-vectorize` to speed up loops. A feature of -O3.
 - Added `-fstack-clash-protection` to identity and\/or correct stack overflows better.
 
-Note: I do not use `-O3` due to the possible inconsistencies it may have on certain code such as excessive loop unrolling causing slower code or compiler errors. Issues with -O3 have been exhibited on the Linux kernel. You're guaranteed better results with LTO 
+Note: I do not use `-O3` due to the possible inconsistencies it may have on certain code such as excessive loop unrolling causing slower code or compiler errors. Issues with -O3 have been exhibited on the Linux kernel. You're guaranteed better results with LTO and loop vectorization.
 
 ### CXXFLAGS
 - Removed everything and added the `$CFLAGS` variable since everything there works for G++.
@@ -70,5 +70,5 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 
 ## [fstab](fstab)
 - Crazy BTRFS full disk single partition encryption setup. Bootloader on separate drive.
-- Swap partition isn't actually a swap partition. It's a partition that holds a swap file so the swap file isn't included in creating snapshots. LOL.
+- Swap subvolume isn't actually a swap partition. It's just a subvolume that holds a swap file so the swap file isn't included in creating snapshots. LOL.
 - Modified mount points such as `/dev/shm` and `/boot` with more secure mount options.
