@@ -35,10 +35,11 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 ### RUSTFLAGS
 - Added `opt-level=2` to do -O2 optimization.
 - Added `target-cpu=native` to compile and optimize for your architecture.
-- Added `lto=thin` to do link-time optimization **on the crate you're compiling** instead of `fat` where it does LTO on all dependencies and the crate. This is to avoid possible issues other crates may have with LTO while still going for a performance boost.
+- Added `lto=fat` to do full link-time optimization. If you experience excessively long linking times, try using `thin` which achives similar performance gains to fat while being quicker. See http://blog.llvm.org/2016/06/thinlto-scalable-and-incremental-lto.html
 
 ### MAKEFLAGS
-- Added `-j$(nproc)` to use all threads available.
+- Added `-j$(getconf _NPROCESSORS_ONLN)` to use all threads available.
+- Added `--quiet` to only print information, warnings, or errors.
 
 ### DEBUG_CFLAGS
 - Added `-grecord-gcc-switches` to insert GCC compiler arguments in debugging information.
@@ -53,12 +54,13 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 
 ### INTEGRITY_CHECK
 - Changed the disgusting, awful md5 to sha512 for clearly obvious reasons. (Why the hell is this default? Not even sha1???)
+Update: As of pacman 6.0.0, Arch now switched to a very better hashing algorithm: CRC. While SHA512 is still superior to CRC, it's a lot better than MD5 and very good on embedded hardware which is where Arch strives in.
 
 ### PACKAGER
 - Set packager to me of course.
 
 ### GPGKEY
-- Set the GPG key to sign packages with to mine.
+- Set the GPG key to sign packages with my key.
 
 ## /X11
 
