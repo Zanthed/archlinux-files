@@ -29,14 +29,12 @@ Important changes made:
 - Set `-march` and `-mtune` to `native` to allow GCC to determine your architecture and its recommended optimizations. Avoid setting this to something other than `native` or `generic` because GCC might have better results with what it finds rather than what you specify. `generic` is for multi-architectures.
 - Added `-ftree-loop-vectorize` to speed up loops. A feature of -O3.
 - Added `-fstack-clash-protection` to identity and\/or correct stack overflows better.
-- Added `-fvtable-verify=preinit` to prevent vtable hijacking *before* shared libraries are loaded (C++ only)
 - Added `-pie -fPIE` to obtain full [ASLR](https://wikipedia.org/wiki/Address_space_layout_randomization).
 - Added `-ftrapv` to add traps (kill) on signed integer overflow.
 - Added `-Wformat-security -Wall -Werror=format-security` to warn *and* error on insecure code as well as increase warning verbosity.
 - Added `-mshstk` to enable built-in shadow stack functions from x86 Control-flow Enforcement Technology (CET).
 - Added `-fstack-protector-all -Wstack-protector --param ssp-buffer-size=4` to enable enforced function buffer overflow checking on ALL functions rather than some. Warns if any functions won't be protected too.
 - Added `-D_GLIBCXX_ASSERTIONS` to implement extra precondition error checking such as bounds checking in strings and null pointer checks.
-
 - Added `-fdiagnostics-color=always` to enable colored output always :)
 
 
@@ -70,6 +68,7 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 
 ### INTEGRITY_CHECK
 - Changed the disgusting, awful md5 to sha512 for clearly obvious reasons. (Why the hell is this default? Not even sha1???)
+
 Update: As of pacman 6.0.0, Arch now switched to a very better hashing algorithm: CRC. While SHA512 is still superior to CRC, it's a lot better than MD5 and very good on embedded hardware which is where Arch strives in.
 
 ### PACKAGER
