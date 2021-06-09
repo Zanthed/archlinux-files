@@ -47,6 +47,8 @@ Note: I do not use `-O3` due to the possible inconsistencies it may have on cert
 - Added `opt-level=2` to do -O2 optimization.
 - Added `target-cpu=native` to compile and optimize for your architecture.
 - Added `lto=fat` to do full link-time optimization. If you experience excessively long linking times, try using `thin` which achives similar performance gains to fat while being quicker. See http://blog.llvm.org/2016/06/thinlto-scalable-and-incremental-lto.html
+- Added 'control-flow-guard=true` to use [Windows Control Flow Guard](https://msrc-blog.microsoft.com/2020/08/17/control-flow-guard-for-clang-llvm-and-rust/)
+- Added `overflow-checks=true` to do buffer overflow checks.
 
 ### MAKEFLAGS
 - Added `-j$(getconf _NPROCESSORS_ONLN)` to use all threads available.

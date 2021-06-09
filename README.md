@@ -1,6 +1,7 @@
 # Customized Arch files
 
 # [/etc](etc/README.md)
+# [/home/eridan](home/eridan/README.md)
 
 Anything I've modified that I don't see done very commonly for good reasons or documented at all anywhere, I'll mention here.
 
